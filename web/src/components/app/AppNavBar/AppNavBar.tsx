@@ -8,7 +8,7 @@ const baseTabClass =
 const AppNavBar: React.FC = () => {
   return (
     <div className="w-full h-16 flex border-b-1 border-gray-300 shadow-xl items-center">
-      <div className="mx-3 w-11 h-11 rounded-full bg-gray-300 cursor-pointer"></div>
+      <div className="mx-3 w-11 h-11 rounded-full bg-gray-300 cursor-pointer" />
       <NavLink
         to={routes.today()}
         className={clsx(baseTabClass)}

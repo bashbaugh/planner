@@ -18,6 +18,9 @@ module.exports = {
           plan: '#00B2FF',
           today: '#FCC605',
         },
+        task: {
+          DEFAULT: '#16AFD0',
+        },
       },
       borderWidth: {
         1: '1px',

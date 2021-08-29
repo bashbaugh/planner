@@ -6,7 +6,7 @@
 # https://redwoodjs.com/docs/app-configuration-redwood-toml
 
 [web]
-  title = "Redwood App"
+  title = "Planly"
   port = 8910
   apiProxyPath = "/.redwood/functions"
 [api]

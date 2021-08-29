@@ -7,7 +7,7 @@ import ReactMarkdown from 'react-markdown'
 export interface TaskData {
   id: string
   title: string
-  details: string
+  details?: string
   completed: boolean
 }
 
@@ -50,6 +50,7 @@ const Task: React.FC<{
         placeholder="Title"
         className="w-full outline-none"
         defaultValue={task.title}
+        autoFocus
       />
     ) : (
       // This is a draft feature of CSS that may be dropped. TODO do this a different way
@@ -71,8 +72,8 @@ const Task: React.FC<{
   return (
     <div
       className={clsx(
-        'px-1 mx-2 flex gap-3 relative group transition-all cursor-pointer',
-        expanded ? 'my-4 py-2 outline-none' : 'my-2'
+        'px-1 mx-2 flex gap-3 relative group transition-all cursor-pointer rounded-lg outline-none',
+        expanded ? 'py-4 py-2' : 'py-2 hover:bg-gray-50 focus:ring-4'
       )}
       onClick={() => changeExpandedState()}
       onKeyDown={(e) => {
@@ -91,7 +92,7 @@ const Task: React.FC<{
         <div className="absolute left-0 w-full top-1/2 h-[2px] bg-black" />
       )} */}
       <button
-        className="w-5 h-5 mt-[2px] rounded-full bg-white border-2 border-task hover:bg-task hover:bg-opacity-20"
+        className="w-5 h-5 mt-[3px] rounded-full bg-white border-2 border-task hover:bg-task hover:bg-opacity-20"
         onClick={(e) => e.stopPropagation()}
         onKeyDown={(e) => e.stopPropagation()}
       />

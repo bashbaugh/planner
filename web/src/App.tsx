@@ -6,11 +6,15 @@ import Routes from 'src/Routes'
 
 import './index.css'
 
+import { MDXProvider } from '@mdx-js/react'
+
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
     <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
       <RedwoodApolloProvider>
-        <Routes />
+        <MDXProvider>
+          <Routes />
+        </MDXProvider>
       </RedwoodApolloProvider>
     </RedwoodProvider>
   </FatalErrorBoundary>

@@ -6,23 +6,25 @@ import InputField from 'src/components/ui/InputField/InputField'
 import Link from 'src/components/ui/Link/Link'
 import { Form, EmailField, PasswordField } from '@redwoodjs/forms'
 
-const LoginPage = () => {
+const SignupPage = () => {
   const onSubmit = (data) => {
     alert(data.email)
   }
 
   return (
     <>
-      <MetaTags title="Login" description="Login to %AppTitle" />
+      <MetaTags title="Sign Up" description="Sign up to %AppTitle" />
       <Form
         onSubmit={onSubmit}
         className="w-full flex flex-col gap-6 items-center"
       >
-        <Heading>Sign In</Heading>
+        <Heading>Sign Up</Heading>
+        <p className="text-gray-600">Create a free account to access Planly.</p>
+        <InputField name="name" placeholder="Your name" required />
         <InputField
           component={EmailField}
           name="email"
-          placeholder="Your email"
+          placeholder="Email"
           required
         />
         <InputField
@@ -32,12 +34,12 @@ const LoginPage = () => {
           required
         />
         <Button>Sign In</Button>
-        <Link to={routes.signup()} className="opacity-70 text-sm">
-          Don&apos;t have an account? Create one for free!
+        <Link to={routes.login()} className="opacity-70 text-sm">
+          If you already have an account, sign in
         </Link>
       </Form>
     </>
   )
 }
 
-export default LoginPage
+export default SignupPage

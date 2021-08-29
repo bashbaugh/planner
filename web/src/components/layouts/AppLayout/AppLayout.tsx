@@ -1,8 +1,10 @@
-const AppLayout = () => {
+import AppNavBar from 'src/components/app/AppNavBar/AppNavBar'
+
+const AppLayout = ({ children }) => {
   return (
     <div>
-      <h2>{'AppLayout'}</h2>
-      <p>{'Find me in ./web/src/components/AppLayout/AppLayout.tsx'}</p>
+      <AppNavBar />
+      {children}
     </div>
   )
 }

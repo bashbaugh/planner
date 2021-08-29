@@ -8,18 +8,24 @@
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
 import { Router, Route, Set } from '@redwoodjs/router'
-
+import AppLayout from './components/layouts/AppLayout/AppLayout'
 import AuthLayout from './components/layouts/AuthLayout/AuthLayout'
 import HomePage from './pages/HomePage/HomePage.mdx'
 
 const Routes = () => {
   return (
     <Router>
-      <Set wrap={AuthLayout}>
-        <Route path="/login" page={AuthLoginPage} name="login" />
+      <Set wrap={AppLayout}>
+        <Route path="/today" page={AppTodayPage} name="today" />
+        <Route path="/plan" page={AppPlanPage} name="plan" />
       </Set>
-      <Route path="/" page={HomePage} name="home" />
-      <Route notfound page={NotFoundPage} />
+      <Set wrap={AuthLayout}>
+        <Route path="/login" page={AuthLoginPage} name="login" prerender />
+        <Route path="/signup" page={AuthSignupPage} name="signup" prerender />
+      </Set>
+      <Route path="/" page={HomePage} name="home" prerender />
+
+      <Route notfound page={NotFoundPage} prerender />
     </Router>
   )
 }

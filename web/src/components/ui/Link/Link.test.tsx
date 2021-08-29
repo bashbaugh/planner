@@ -1,11 +1,11 @@
 import { render } from '@redwoodjs/testing/web'
 
-import Input from './Input'
+import Link from './Link'
 
-describe('Input', () => {
+describe('Link', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<Input />)
+      render(<Link />)
     }).not.toThrow()
   })
 })

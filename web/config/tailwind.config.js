@@ -4,10 +4,23 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        primary: ['Roboto', 'sans-serif'],
+      },
       colors: {
         primary: {
           DEFAULT: '#0A5285',
         },
+        muted: {
+          DEFAULT: '#7A7A7A',
+        },
+        apptab: {
+          plan: '#00B2FF',
+          today: '#FCC605',
+        },
+      },
+      borderWidth: {
+        1: '1px',
       },
     },
   },

@@ -1,7 +1,7 @@
-import Input from './Input'
+import Input from './InputField'
 
 export const basic = () => {
-  return <Input>Button</Input>
+  return <Input placeholder="An input" />
 }
 
 export default { title: 'Components/Input' }

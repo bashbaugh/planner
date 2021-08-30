@@ -73,7 +73,7 @@ const Task: React.FC<{
     <div
       className={clsx(
         'px-1 mx-2 flex gap-3 relative group transition-all cursor-pointer rounded-lg outline-none',
-        expanded ? 'py-4 py-2' : 'py-2 hover:bg-gray-50 focus:ring-4'
+        expanded ? 'py-4' : 'py-2 hover:bg-gray-50 focus:ring-4'
       )}
       onClick={() => changeExpandedState()}
       onKeyDown={(e) => {
@@ -81,6 +81,7 @@ const Task: React.FC<{
       }}
       role="button"
       tabIndex={0}
+      aria-label={task.title}
     >
       <div
         className={clsx(
